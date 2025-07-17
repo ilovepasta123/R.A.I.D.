@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search for Members - R.A.I.D.</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       background-color: #000;
@@ -15,20 +14,32 @@
       padding: 0;
     }
     .logo {
-      margin-top: 50px;
+      margin-top: 40px;
+    }
+    .logo img {
+      width: 150px;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #FFD43B;
     }
     .search-box {
-      margin: 40px auto;
-      max-width: 300px;
+      margin: 30px auto;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
       background: rgba(255,255,255,0.1);
       padding: 10px;
-      border-radius: 5px;
+      border-radius: 8px;
     }
     input[type="text"] {
-      width: 80%;
+      width: 70%;
       padding: 10px;
       border: none;
       border-radius: 3px;
+      font-size: 16px;
     }
     button {
       padding: 10px 15px;
@@ -36,14 +47,21 @@
       border: none;
       border-radius: 3px;
       font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
     }
     button:hover {
       background-color: #ffcc00;
     }
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #fff;
+      white-space: pre-line;
+    }
     a {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 40px;
       color: #FFD43B;
       text-decoration: none;
     }
@@ -54,16 +72,98 @@
 </head>
 <body>
   <div class="logo">
-    <img src="raid-logo.PNG" alt="R.A.I.D. Logo" width="150">
+    <img src="raid-logo.PNG" alt="R.A.I.D. Logo">
   </div>
 
   <h1>Search for Members</h1>
 
   <div class="search-box">
-    <input type="text" placeholder="Type name or ID here...">
-    <button>Search</button>
+    <input type="text" id="searchInput" placeholder="Type name, rank or ID...">
+    <button onclick="searchMember()">Search</button>
   </div>
 
+  <div class="result" id="result"></div>
+
   <a href="index.html">← Back to Home</a>
+
+  <script>
+    // Member database
+    const membersData = [
+      {
+        aliases: ["rehan.p", "overwatch", "001"],
+        fullName: "Rehan.P",
+        joined: "start of R.A.I.D.",
+        rank: "Overwatch",
+        id: "001"
+      },
+      {
+        aliases: ["thaahir ismail", "iron vanguard", "002"],
+        fullName: "Thaahir Ismail",
+        joined: "July 16 2025",
+        rank: "Iron Vanguard",
+        id: "002"
+      },
+      {
+        aliases: ["reyansh wadhwani", "field marshal", "003"],
+        fullName: "Reyansh Wadhwani",
+        joined: "July 17 2025",
+        rank: "Field Marshal",
+        id: "003"
+      },
+      {
+        aliases: ["talal haider", "shieldbearer", "004"],
+        fullName: "Talal Haider",
+        joined: "July 11 2025",
+        rank: "Shieldbearer",
+        id: "004"
+      },
+      {
+        aliases: ["karas amir", "karas", "edge handler", "005"],
+        fullName: "Karas Amir",
+        joined: "July 10 2025",
+        rank: "Edge Handler",
+        id: "005"
+      },
+      {
+        aliases: ["mahdi insaf", "mahdi", "eyes of r.a.i.d.", "intelligence chief", "006"],
+        fullName: "Mahdi Insaf",
+        joined: "July 16 2025",
+        rank: "Eyes of R.A.I.D. (Intelligence Chief)",
+        id: "006"
+      },
+      {
+        aliases: ["zayne anzil", "gatekeeper", "recruiter", "008"],
+        fullName: "Zayne Anzil",
+        joined: "July 17 2025",
+        rank: "Gatekeeper (Recruiter)",
+        id: "008"
+      }
+    ];
+
+    function searchMember() {
+      const input = document.getElementById('searchInput').value.trim().toLowerCase();
+      const resultBox = document.getElementById('result');
+
+      if (input === "") {
+        resultBox.textContent = "❌ Please type a name, rank, or ID number.";
+        return;
+      }
+
+      let found = null;
+      for (const member of membersData) {
+        if (member.aliases.some(alias => alias.toLowerCase() === input)) {
+          found = member;
+          break;
+        }
+      }
+
+      if (found) {
+        resultBox.textContent =
+          `Full name: ${found.fullName}\nJoined date: ${found.joined}\nRank: ${found.rank}\nID number: ${found.id}`;
+      } else {
+        resultBox.textContent = "⚠️ Member not found.";
+      }
+    }
+  </script>
 </body>
 </html>
