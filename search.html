@@ -78,7 +78,7 @@
   <h1>Search for Members</h1>
 
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Type name, rank or ID...">
+    <input type="text" id="searchInput" placeholder="Type name, rank, or ID...">
     <button onclick="searchMember()">Search</button>
   </div>
 
@@ -87,57 +87,14 @@
   <a href="index.html">← Back to Home</a>
 
   <script>
-    // Member database
     const membersData = [
-      {
-        aliases: ["rehan.p", "overwatch", "001"],
-        fullName: "Rehan.P",
-        joined: "start of R.A.I.D.",
-        rank: "Overwatch",
-        id: "001"
-      },
-      {
-        aliases: ["thaahir ismail", "iron vanguard", "002"],
-        fullName: "Thaahir Ismail",
-        joined: "July 16 2025",
-        rank: "Iron Vanguard",
-        id: "002"
-      },
-      {
-        aliases: ["reyansh wadhwani", "field marshal", "003"],
-        fullName: "Reyansh Wadhwani",
-        joined: "July 17 2025",
-        rank: "Field Marshal",
-        id: "003"
-      },
-      {
-        aliases: ["talal haider", "shieldbearer", "004"],
-        fullName: "Talal Haider",
-        joined: "July 11 2025",
-        rank: "Shieldbearer",
-        id: "004"
-      },
-      {
-        aliases: ["karas amir", "karas", "edge handler", "005"],
-        fullName: "Karas Amir",
-        joined: "July 10 2025",
-        rank: "Edge Handler",
-        id: "005"
-      },
-      {
-        aliases: ["mahdi insaf", "mahdi", "eyes of r.a.i.d.", "intelligence chief", "006"],
-        fullName: "Mahdi Insaf",
-        joined: "July 16 2025",
-        rank: "Eyes of R.A.I.D. (Intelligence Chief)",
-        id: "006"
-      },
-      {
-        aliases: ["zayne anzil", "gatekeeper", "recruiter", "008"],
-        fullName: "Zayne Anzil",
-        joined: "July 17 2025",
-        rank: "Gatekeeper (Recruiter)",
-        id: "008"
-      }
+      {aliases: ["rehan", "rehan.p", "overwatch", "001"], fullName: "Rehan.P", joined: "start of R.A.I.D.", rank: "Overwatch", id: "001"},
+      {aliases: ["thaahir", "thaahir ismail", "iron vanguard", "002"], fullName: "Thaahir Ismail", joined: "July 16 2025", rank: "Iron Vanguard", id: "002"},
+      {aliases: ["reyansh", "reyansh wadhwani", "field marshal", "003"], fullName: "Reyansh Wadhwani", joined: "July 17 2025", rank: "Field Marshal", id: "003"},
+      {aliases: ["talal", "talal haider", "shieldbearer", "004"], fullName: "Talal Haider", joined: "July 11 2025", rank: "Shieldbearer", id: "004"},
+      {aliases: ["karas", "karas amir", "edge handler", "005"], fullName: "Karas Amir", joined: "July 10 2025", rank: "Edge Handler", id: "005"},
+      {aliases: ["mahdi", "mahdi insaf", "eyes of r.a.i.d.", "intelligence chief", "006"], fullName: "Mahdi Insaf", joined: "July 16 2025", rank: "Eyes of R.A.I.D. (Intelligence Chief)", id: "006"},
+      {aliases: ["zayne", "zayne anzil", "gatekeeper", "recruiter", "008"], fullName: "Zayne Anzil", joined: "July 17 2025", rank: "Gatekeeper (Recruiter)", id: "008"}
     ];
 
     function searchMember() {
@@ -151,7 +108,7 @@
 
       let found = null;
       for (const member of membersData) {
-        if (member.aliases.some(alias => alias.toLowerCase() === input)) {
+        if (member.aliases.some(alias => alias.includes(input))) {
           found = member;
           break;
         }
@@ -167,3 +124,4 @@
   </script>
 </body>
 </html>
+
