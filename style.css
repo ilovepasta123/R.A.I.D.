@@ -85,3 +85,30 @@ ul#memberList li {
   font-size: 1em;
   line-height: 1.4;
 }
+.credit-section {
+  background: #222;
+  border: 1px solid #ff2a2a;
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  text-align: left;
+}
+.credit-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+.credit-section ul li {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+.credit-section ul li strong {
+  color: #ff2a2a;
+}
+.thanks {
+  margin-top: 30px;
+  font-size: 1.1em;
+  text-align: center;
+  color: #ff2a2a;
+}
