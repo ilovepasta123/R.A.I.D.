@@ -1,30 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R.A.I.D. – Member Directory</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Members – R.A.I.D.</title>
+<link rel="stylesheet" href="members.css">
 </head>
 <body>
+  <div class="container">
+    <img src="logo.png" alt="RAID Logo" class="logo">
+    <input type="text" id="searchBox" placeholder="search here">
+  </div>
 
-  <h1>Member Directory</h1>
-  <p>Search by name or ID number:</p>
-
-  <input type="text" id="searchBox" placeholder="Type name or ID..." />
-
-  <ul id="memberList">
-    <!-- Example entries -->
-    <li data-id="001">Rehan – Founder</li>
-    <li data-id="002">Thaahir – Iron Vangaurd</li>
-    <li data-id="003">Reyansh – Field Marshal</li>
-    <li data-id="004">Karas – Frontline</li>
-    <li data-id="005">Talal – Edgehandler</li>
-    <li data-id="006">Mahdi – Intelligence Chief</li>
-    <li data-id="007">Zayne Anzil – GateKeeper</li>
- 
-  </ul>
-
-  <script src="js/search.js"></script>
+  <script>
+    // Optional: search functionality can go here later
+    document.getElementById('searchBox').addEventListener('input', function() {
+      // filter member list if you add one later
+    });
+  </script>
 </body>
 </html>
