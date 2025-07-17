@@ -66,3 +66,22 @@ ul#memberList li {
   max-width: 500px;
   border-radius: 4px;
 }
+.rank {
+  background: #222;
+  border: 1px solid #ff2a2a;
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  text-align: left;
+}
+.rank h2 {
+  color: #ff2a2a;
+  margin-bottom: 8px;
+}
+.rank p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
