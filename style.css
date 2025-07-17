@@ -9,6 +9,56 @@ body {
   min-height: 100vh;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #333;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #555;
+}
 /* Centered container for homepage and other pages */
 .container {
   display: flex;
