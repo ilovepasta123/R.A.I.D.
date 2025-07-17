@@ -42,3 +42,27 @@ h1 {
   background: #ff2a2a;
   color: #000;
 }
+
+input#searchBox {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
+  border: 2px solid #ff2a2a;
+  border-radius: 5px;
+  font-size: 1em;
+}
+ul#memberList {
+  list-style: none;
+  padding: 0;
+}
+ul#memberList li {
+  background: #222;
+  border: 1px solid #ff2a2a;
+  padding: 10px;
+  margin: 8px auto;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 4px;
+}
