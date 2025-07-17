@@ -31,6 +31,12 @@ body {
   max-width: 200px;
   margin-bottom: 20px;
 }
+.logo {
+  max-width: 200px; /* control the width */
+  height: auto;     /* keep proportions */
+  display: block;
+  margin: 0 auto 20px; /* center it and add spacing below */
+}
 
 h1 {
   margin: 20px 0;
