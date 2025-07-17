@@ -180,3 +180,32 @@ input[type="text"]::placeholder {
   margin-top: 5px;
   color: #ddd;
 }
+.scroll-hint {
+  position: fixed;
+  right: 20px; /* move to left:20px; if you want on left */
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.8;
+  pointer-events: none; /* make sure it doesn’t block clicks */
+}
+
+.scroll-hint .arrow {
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
